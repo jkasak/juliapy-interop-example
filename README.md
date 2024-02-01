@@ -12,5 +12,3 @@ Standard `Project.toml` and `Manifest.toml` setup using the pkg functionality in
 
 ### Python dependencies
 A non-version controlled `requirements.txt`.
-
-## Making changes to Julia code and seeing them in Python
