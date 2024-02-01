@@ -1,5 +1,3 @@
-import contextlib
-
 from pathlib import Path
 from juliacall import Main as jl
 
@@ -7,10 +5,7 @@ from juliacall import Main as jl
 repo_root_path = Path(__file__).parent.parent
 julia_module_path = str(repo_root_path / "julia_src" / "MyJuliaModule.jl")
 
-# Avoid "Activating project" printouts in Python land
-#with open("/dev/null", "w") as devnull:
-#    with contextlib.redirect_stderr(devnull):
-jl.Pkg.activate(str(repo_root_path))
+jl.Pkg.activate(str(repo_root_path), io=jl.devnull)
 jl.seval(f'include("{julia_module_path}")')
 
 # Functions in MyJuliaModule are now in this namespace
