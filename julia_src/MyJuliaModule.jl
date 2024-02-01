@@ -2,7 +2,6 @@ module MyJuliaModule
 
 using JSON
 
-
 function average_furniture_price(json_path::String)::Float64
     data = JSON.parsefile(json_path)
 
